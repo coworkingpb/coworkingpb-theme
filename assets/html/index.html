@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>Coworking Pays Basque</title>
+    <!--<link href="css/bootstrap.css" rel="stylesheet" type="text/css">-->
+    <link href="css/coworkingpb.css" rel="stylesheet" type="text/css">
+    <!-- IE tricks. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <section id="accueil" class="row">
+        <div class="">
+          <h1>
+            <img src="img/coworkingpb-logo-big.png" alt="Coworking Pays Basque">
+          </h1>
+          <p class="lead">
+            Construisons ensemble les modes de travail collaboratif de demain.
+          </p>
+        </div>
+      </section>
+
+      <section id="espace" class="row">
+        <div class="">
+          <h2>L'espace</h2>
+<p>L’espace est ouvert du lundi au vendredi, de 9h à 18h.</p>
+<p>L’espace est situé à dans le quartier Iraty de Biarritz : 10 rue des Mésanges, 64200 Biarritz.</p>
+<p>Carte.</p>
+<p>Comment venir ?</p>
+<p>En bus : Ligne C, arrêt "ZA Biarritz" (ou Mousse). http://www.chronoplus.eu/</p>
+<p>En train : Gare de Biarritz</p>
+<p>En voiture (ou à vélo) : …</p>
+        </div>
+      </section>
+
+      <section id="coworkers" class="row">
+        <div class="">
+          <h2>Les coworkers</h2>
+<p>Ici</p>
+<p>votre</p>
+<p>photo</p>
+<p>Ici</p>
+<p>votre</p>
+<p>photo</p>
+        </div>
+      </section>
+
+      <section id="tarifs" class="row">
+        <div class="">
+          <h2>Les tarifs</h2>
+<p>Les tarifs applicables à compter du 1er janvier 2014 :<br />
+Pour les non adhérents :</p>
+<ul>
+<li>1 journée d&rsquo;essai : gratuit !</li>
+<li>1/2 journée : 5€ TTC ;</li>
+<li>1 journée : 10€ TTC ;</li>
+</ul>
+<p>Pour les adhérents :</p>
+<ul>
+<li>Un bureau réservé au mois : 150€ TTC ;</li>
+<li>Un bureau de l&rsquo;espace commun en accès illimité au mois : 125€ TTC ;</li>
+<li>Une unité d&rsquo;une demi-journée : 4,50€ TTC ;</li>
+<li>Un carnet de 10 unités (soit 5 jours) : 43€ TTC ;</li>
+<li>Un carnet de 20 unités (soit 10 jours) : 80€ TTC ;</li>
+<li>Un carnet de 40 unités (soit 20 jours) : 140€ TTC.</li>
+</ul>
+<p>Adhésion à l&rsquo;association : 30€ TTC.</p>
+<p>Les carnets sont valables jusqu&rsquo;au 31 décembre 2014 et ne sont pas remboursables.<br />
+Les tarifs sont révisables en cours d&rsquo;année sur décision du Bureau.</p>
+        </div>
+      </section>
+
+      <section id="blog" class="row">
+        <div class="">
+          <h2>Le blog</h2>
+        </div>
+      </section>
+
+      <section id="contact" class="row">
+        <div class="">
+          <h2>Contact</h2>
+        </div>
+      </section>
+
+      <div id="navbar_main_bg" class="row">
+        <div class="container"></div>
+      </div>
+      <div id="navbar_main" class="row navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="collapse navbar-collapse">
+            <ul id="nav_main" class="nav navbar-nav nav-justified">
+              <li><a href="#accueil">Accueil</a></li>
+              <li><a href="#espace">L'espace</a></li>
+              <li><a href="#coworkers">Les coworkers</a></li>
+              <li><a href="#tarifs">Tarifs</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#plus">+</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="js/libs.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+        $('#nav_main').onePageNav({
+          currentClass: 'active',
+          changeHash: true,
+          scrollSpeed: 750,
+          scrollOffset: 30,
+          scrollThreshold: 0.5,
+          filter: ':not(.external)',
+          easing: 'swing',
+          begin: function() {
+            /* Gets fired when the animation is starting. */
+          },
+          end: function() {
+            /* Gets fired when the animation is ending. */
+          },
+          scrollChange: function($currentListItem) {
+            /* Gets fired when you enter a section and I pass the list item of the section. */
+          }
+        });
+        $('#navbar_main').stick_in_parent();
+        $('#navbar_main_bg').stick_in_parent();
+      });
+    </script>
+  </body>
+</html>
