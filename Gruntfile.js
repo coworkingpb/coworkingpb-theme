@@ -23,6 +23,16 @@ module.exports = function(grunt) {
             dest: 'public/img'
           }
         ]
+      },
+      glyphicons: {
+        files: [
+          {
+            expand: true,
+            cwd: 'bower_components/bootstrap/dist/fonts/',
+            src: '**',
+            dest: 'public/fonts'
+          }
+        ]
       }
     },
     less: {
