@@ -20,6 +20,7 @@
   <body>
     <div class="container">
       <section id="accueil" class="row">
+        <div class="trame"></div>
         <div class="">
           <h1>
             <img src="img/coworkingpb-logo-big.png" alt="Coworking Pays Basque">
@@ -31,15 +32,43 @@
       </section>
 
       <section id="espace" class="row">
-        <div class="">
+        <div class="col-md-6 col-lg-6">
           <h2>L'espace</h2>
-<p>L’espace est ouvert du lundi au vendredi, de 9h à 18h.</p>
-<p>L’espace est situé à dans le quartier Iraty de Biarritz : 10 rue des Mésanges, 64200 Biarritz.</p>
-<p>Carte.</p>
-<p>Comment venir ?</p>
-<p>En bus : Ligne C, arrêt "ZA Biarritz" (ou Mousse). http://www.chronoplus.eu/</p>
-<p>En train : Gare de Biarritz</p>
-<p>En voiture (ou à vélo) : …</p>
+<p>Nous disposons d’un espace de 153 m2 dédié au coworking et aux télétravailleurs.</p>
+<div class="flex-container">
+  <div class="flexslider">
+    <ul class="slides">
+      <li data-thumb="img/espace-1-thumb.jpg">
+        <img src="img/espace-1.jpg" />
+        <p class="flex-caption">Un grand open-space.</p>
+      </li>
+      <li data-thumb="img/espace-2-thumb.jpg">
+        <img src="img/espace-2.jpg" />
+      </li>
+      <li data-thumb="img/espace-3-thumb.jpg">
+        <img src="img/espace-3.jpg" />
+      </li>
+      <li data-thumb="img/espace-4-thumb.jpg">
+        <img src="img/espace-4.jpg" />
+      </li>
+    </ul>
+  </div>
+</div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+<div class="services">
+  <h3>Services</h3>
+  <ul class="row">
+    <li class="col-md-4"><span class="glyphicon glyphicon-home"></span> Open-space</li>
+    <li class="col-md-4"><a href="#tarifs"><span class="glyphicon glyphicon-flag"></span> bureaux individuels*</a></li>
+    <li class="col-md-4"><span class="glyphicon glyphicon-comment"></span> salle de réunion</li>
+    <li class="col-md-4"><span class="glyphicon glyphicon-globe"></span> accès internet</li>
+    <li class="col-md-4"><span class="glyphicon glyphicon-glass"></span> kitchenette</li>
+    <li class="col-md-4"><span class="glyphicon glyphicon-log-in"></span> facilité de parking</li>
+    <li class="col-md-4"><span class="glyphicon glyphicon-shopping-cart"></span> commerces à proximité</li>
+    <li class="col-md-4"><span class="glyphicon glyphicon-road"></span> transports à proximité</li>
+  </ul>
+</div>
         </div>
       </section>
 
@@ -89,6 +118,13 @@ Les tarifs sont révisables en cours d&rsquo;année sur décision du Bureau.</p>
       <section id="contact" class="row">
         <div class="">
           <h2>Contact</h2>
+<p>L’espace est ouvert du lundi au vendredi, de 9h à 18h.</p>
+<p>L’espace est situé à dans le quartier Iraty de Biarritz : 10 rue des Mésanges, 64200 Biarritz.</p>
+<p>Carte.</p>
+<p>Comment venir ?</p>
+<p>En bus : Ligne C, arrêt "ZA Biarritz" (ou Mousse). http://www.chronoplus.eu/</p>
+<p>En train : Gare de Biarritz</p>
+<p>En voiture (ou à vélo) : …</p>
         </div>
       </section>
 
@@ -136,6 +172,7 @@ Les tarifs sont révisables en cours d&rsquo;année sur décision du Bureau.</p>
         });
         $('#navbar_main').stick_in_parent();
         $('#navbar_main_bg').stick_in_parent();
+        $('.flexslider').flexslider();
       });
     </script>
   </body>
