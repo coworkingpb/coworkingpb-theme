@@ -33,6 +33,16 @@ module.exports = function(grunt) {
             dest: 'public/fonts'
           }
         ]
+      },
+      flexslider_fonts: {
+        files: [
+          {
+            expand: true,
+            cwd: 'bower_components/flexslider/fonts/',
+            src: '**',
+            dest: 'public/css/fonts'
+          }
+        ]
       }
     },
     less: {
@@ -53,7 +63,8 @@ module.exports = function(grunt) {
             'bower_components/bootstrap/dist/js/bootstrap.js',
             'bower_components/jQuery-One-Page-Nav/jquery.scrollTo.js',
             'bower_components/jQuery-One-Page-Nav/jquery.nav.js',
-            'bower_components/sticky-kit/jquery.sticky-kit.js'
+            'bower_components/sticky-kit/jquery.sticky-kit.js',
+            'bower_components/flexslider/jquery.flexslider.js'
           ]
         }
       }

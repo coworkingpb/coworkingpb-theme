@@ -45,11 +45,11 @@
       <li data-thumb="img/espace-2-thumb.jpg">
         <img src="img/espace-2.jpg" />
       </li>
-      <li data-thumb="img/espace-3-thumb.jpg">
-        <img src="img/espace-3.jpg" />
+      <li data-thumb="img/espace-1-thumb.jpg">
+        <img src="img/espace-1.jpg" />
       </li>
-      <li data-thumb="img/espace-4-thumb.jpg">
-        <img src="img/espace-4.jpg" />
+      <li data-thumb="img/espace-2-thumb.jpg">
+        <img src="img/espace-2.jpg" />
       </li>
     </ul>
   </div>
@@ -172,7 +172,10 @@ Les tarifs sont révisables en cours d&rsquo;année sur décision du Bureau.</p>
         });
         $('#navbar_main').stick_in_parent();
         $('#navbar_main_bg').stick_in_parent();
-        $('.flexslider').flexslider();
+        $('.flexslider').flexslider({
+          animation: "slide",
+          controlNav: "thumbnails"        
+        });
       });
     </script>
   </body>
