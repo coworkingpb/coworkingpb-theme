@@ -32,9 +32,14 @@ watch:
 	$(GRUNT) watch
 
 
-#: public - generate public/ folder contents.
+#: public - Generate public/ folder contents.
 public: bower
 	$(GRUNT) copy less uglify
+
+
+#: serve - Serve public/ folder on localhost:8000
+serve:
+	cd public/ && python -m SimpleHTTPServer
 
 
 #: clean - Basic cleanup, mostly temporary files.
