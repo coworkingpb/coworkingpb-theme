@@ -38,41 +38,43 @@
       <section id="espace" class="row">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-lg-6">
+            <div class="">
               <h2>L'espace</h2>
-<p>Nous disposons d’un espace de 153 m2 dédié au coworking et aux télétravailleurs.</p>
 <div class="flex-container">
   <div class="flexslider">
     <ul class="slides">
       <li>
         <img src="img/espace-1.jpg" />
-        <p class="flex-caption">Un grand open-space.</p>
+        <p class="flex-caption">Un espace de 153 m2 dédié au coworking et aux télétravailleurs.</p>
       </li>
       <li>
         <img src="img/espace-2.jpg" />
       </li>
       <li>
-        <img src="img/espace-1.jpg" />
+        <img src="img/espace-3.jpg" />
       </li>
       <li>
-        <img src="img/espace-2.jpg" />
+        <img src="img/espace-4.jpg" />
+      </li>
+      <li>
+        <img src="img/espace-5.jpg" />
       </li>
     </ul>
   </div>
 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div>
 <div class="services">
   <h3>Services</h3>
   <ul class="row">
-    <li class="col-md-4"><span class="glyphicon glyphicon-home"></span> Open-space</li>
-    <li class="col-md-4"><a href="#tarifs"><span class="glyphicon glyphicon-flag"></span> bureaux individuels*</a></li>
-    <li class="col-md-4"><span class="glyphicon glyphicon-comment"></span> salle de réunion</li>
-    <li class="col-md-4"><span class="glyphicon glyphicon-globe"></span> accès internet</li>
-    <li class="col-md-4"><span class="glyphicon glyphicon-glass"></span> kitchenette</li>
-    <li class="col-md-4"><span class="glyphicon glyphicon-log-in"></span> facilité de parking</li>
-    <li class="col-md-4"><span class="glyphicon glyphicon-shopping-cart"></span> commerces à proximité</li>
-    <li class="col-md-4"><span class="glyphicon glyphicon-road"></span> transports à proximité</li>
+    <li class="col-md-3"><span class="glyphicon glyphicon-home"></span> Open-space</li>
+    <li class="col-md-3"><a href="#tarifs"><span class="glyphicon glyphicon-flag"></span> bureaux individuels*</a></li>
+    <li class="col-md-3"><span class="glyphicon glyphicon-comment"></span> salle de réunion</li>
+    <li class="col-md-3"><span class="glyphicon glyphicon-globe"></span> accès internet</li>
+    <li class="col-md-3"><span class="glyphicon glyphicon-glass"></span> kitchenette</li>
+    <li class="col-md-3"><span class="glyphicon glyphicon-log-in"></span> facilité de parking</li>
+    <li class="col-md-3"><span class="glyphicon glyphicon-shopping-cart"></span> commerces à proximité</li>
+    <li class="col-md-3"><span class="glyphicon glyphicon-road"></span> transports à proximité</li>
   </ul>
 </div>
             </div>
@@ -219,7 +221,9 @@ Les tarifs sont révisables en cours d&rsquo;année sur décision du Bureau.</p>
         $('#navbar_main').stick_in_parent();
         $('#navbar_main_bg').stick_in_parent();
         $('.flexslider').flexslider({
-          animation: "slide"
+          animation: "slide",
+          itemWidth: 400,
+          itemMargin: 5
         });
         fetch_coworkers();
       });
