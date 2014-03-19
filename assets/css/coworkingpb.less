@@ -77,6 +77,14 @@ typically white).
   filter: gray; /* IE6-9 */
 }
 
+.no-grayscale {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  -o-filter: none;
+  filter: none;
+}
+
 html {
 
 }
@@ -197,16 +205,39 @@ section#espace {
 
 section#coworkers {
   #coworkers_list {
+    z-index: 0;
     .user {
       .make-md-column(2);
-      h3 {
-        font-size: 100%;
-        font-weight: normal;
+      padding: 0px;
+      position: relative;
+      .details {
+        position: relative;
+        z-index: 1;
+        top: 100%;
+	width: 100%;
+        padding: 5px;
+        border-width: 1px 0 0 0;
+        border-color: rgba(48, 48, 48, 0.4);
+        border-style: solid;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.4);
+        .name {
+          font-size: 110%;
+          font-weight: bold;
+        }
+        .job {
+          font-size: 90%;
+          margin: 0;
+        }
       }
       img {
         width: 100%;
         height: 100%;
         .grayscale;
+        z-index: 0;
+        &:hover {
+          .no-grayscale;
+	}
       }
     }
   }

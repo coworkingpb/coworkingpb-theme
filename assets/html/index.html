@@ -178,10 +178,13 @@ Les tarifs sont révisables en cours d&rsquo;année sur décision du Bureau.</p>
           first_name: first_name,
           avatar: avatar
         });
-        $('#coworkers_list').append(
+        coworker_element = $('#coworkers_list').append(
           '<div class="user col-md-2">' +
-          '  <h3>' + first_name + ' ' + last_name + '</h3>' +
           '  <img src="' + avatar + '" />' +
+          '  <div class="details">' +
+          '    <p class="name">' + first_name + ' ' + last_name + '</p>' +
+          '    <p class="job">Consultante en organisation d\'événements numériques</p>' +
+          '  </div>' +
           '</div>'
         );
       }
