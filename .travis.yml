@@ -1,0 +1,8 @@
+language: python
+branches:
+  only:
+    - master
+install:
+  - pip install ghp-import
+script:
+  - make develop public publish
