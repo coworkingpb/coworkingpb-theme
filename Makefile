@@ -5,6 +5,7 @@ NPM = npm
 BIN_DIR = node_modules/.bin
 BOWER = $(BIN_DIR)/bower
 GRUNT = $(BIN_DIR)/grunt
+GHP = ghp-import
 
 
 .PHONY: help develop bower watch public clean dist-clean maintainer-clean
@@ -20,6 +21,7 @@ help:
 #: develop - Install development libraries.
 develop:
 	$(NPM) install
+	pip install ghp-import
 
 
 #: bower - Download libraries with bower.
@@ -55,3 +57,8 @@ dist-clean: clean
 #: maintainer-clean - Remove almost everything that can be re-generated.
 maintainer-clean: dist-clean
 	rm -rf node_modules/
+
+
+#: publish - Publish generated website.
+publish:
+	$(GHP) -n public/
