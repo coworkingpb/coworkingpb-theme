@@ -8,7 +8,7 @@ GRUNT = $(BIN_DIR)/grunt
 GHP = ghp-import
 
 
-.PHONY: help develop bower watch public clean dist-clean maintainer-clean
+.PHONY: help develop bower watch public clean dist-clean maintainer-clean gh-pages-commit gh-pages-push
 
 
 #: help - Display available targets.
@@ -59,6 +59,11 @@ maintainer-clean: dist-clean
 	rm -rf node_modules/
 
 
-#: publish - Publish generated website.
-publish:
+#: gh-pages-commit - Commit generated website into gh-pages branch.
+gh-pages-commit:
 	$(GHP) -n public/
+
+
+# gh-pages-push - Travis pushes gh-pages branch on Github.
+gh-pages-push:
+	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
