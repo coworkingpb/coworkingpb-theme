@@ -92,6 +92,8 @@ html {
 body {
   background-color: @color_grey_2;
   color: #ffffff;
+  position: relative;
+  z-index: 0;
 }
 
 section {
@@ -99,7 +101,11 @@ section {
   padding-top: 50px;
   padding-bottom: 50px;
 
-  &:nth-child(3n+1) {
+  /*border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #f0f0f0 transparent #999999 transparent;*/
+
+  /*&:nth-child(3n+1) {
       background-color: @color_grey_2;
   }
   &:nth-child(3n+2) {
@@ -107,11 +113,12 @@ section {
   }
   &:nth-child(3n+3) {
       background-color: @color_main_1;
-  }
+  }*/
 }
 
 #navbar_main {
   position: absolute;
+  z-index: 101;
   width: 100%;
   top: 658px - @navbar_main_height - @navbar_main_border_top - @navbar_main_border_bottom - 50px;
   background-color: transparent;
@@ -127,6 +134,7 @@ section {
 
 #navbar_main_bg {
   position: absolute;
+  z-index: 100;
   display:block;
   top: 658px;
   height: 50px;
@@ -251,7 +259,7 @@ section#tarifs {
     font-size: 120%;
     td, th {
       vertical-align: middle;
-      &.frequency {
+      &.subscription, &.frequency {
 	text-align: center;
       }
     }
