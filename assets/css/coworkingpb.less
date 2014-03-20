@@ -53,6 +53,11 @@ typically white).
 @color_main_3: #ffffff;
 @color_grey_2: #dbdbdb;
 
+/* Fonts. */
+@font_standard: 'Raleway', sans-serif;
+@font_title: 'Nixie One', cursive;
+
+
 /* Layout. */
 @navbar_main_height: 50px;
 @navbar_main_border_top: 1px;
@@ -94,26 +99,7 @@ body {
   color: #ffffff;
   position: relative;
   z-index: 0;
-}
-
-section {
-  .fullsize-background;
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  border-width: 1px 0 1px 0;
-  border-style: solid;
-  border-color: #f0f0f0 transparent #999999 transparent;
-
-  /*&:nth-child(3n+1) {
-      background-color: @color_grey_2;
-  }
-  &:nth-child(3n+2) {
-      background-color: @color_main_2;
-  }
-  &:nth-child(3n+3) {
-      background-color: @color_main_1;
-  }*/
+  font-family: @font_standard;
 }
 
 #navbar_main {
@@ -142,9 +128,25 @@ section {
   background-color: @color_main_2;
 }
 
-h2 {
-  color: @color_main_3;
-  font-size: 6em;
+section {
+  .fullsize-background;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #f0f0f0 transparent #999999 transparent;
+
+  h2 {
+    color: @color_main_3;
+    font-size: 6em;
+    font-family: @font_title;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: @font_title;
+  }
 }
 
 section#accueil {
@@ -214,6 +216,9 @@ section#espace {
 
 section#coworkers {
   background-color: @color_grey_2;
+  h2 {
+    color: @color_main_1;
+  }
   #coworkers_list {
     z-index: 0;
     .user {
@@ -273,4 +278,8 @@ section#tarifs {
 
 section#contact {
   background-color: @color_grey_2;
+  color: @color_main_1;
+  h2 {
+    color: @color_main_1;
+  }
 }
