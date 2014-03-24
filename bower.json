@@ -9,7 +9,6 @@
     "jquery": "2.1.0",
     "jQuery-One-Page-Nav": "2.2.0",
     "bootstrap": "3.1.1",
-    "sticky-kit": "~1.0.3",
     "flexslider": "*"
   },
   "devDependencies": {},

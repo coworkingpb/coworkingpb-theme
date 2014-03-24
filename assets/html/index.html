@@ -20,7 +20,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container-fluid">
+    <div id="container" class="container-fluid">
       <section id="accueil" class="row">
         <div class="trame"></div>
         <div class="container">
@@ -201,7 +201,6 @@ autres.</p>
 
     </div>
 
-    <div id="navbar_main_bg"></div>
     <nav id="navbar_main" class="navbar navbar-default" role="navigation">
       <div class="container">
         <ul id="nav_main" class="nav navbar-nav nav-justified">
@@ -267,14 +266,43 @@ autres.</p>
             /* Gets fired when you enter a section and I pass the list item of the section. */
           }
         });
-        $('#navbar_main').stick_in_parent();
-        $('#navbar_main_bg').stick_in_parent();
+        //$('#navbar_main').sticky({topSpacing:0});
+        //$('#navbar_main, #navbar_main_bg').stick_in_parent({parent: 'body', inner_scrolling: false});
         $('.flexslider').flexslider({
           animation: "slide",
           itemWidth: 400,
           itemMargin: 5
         });
         fetch_coworkers();
+
+
+function stick(elem) {
+  var offsetTop = elem.offset().top;
+  var accueil_bottom = $('#espace').offset().top;
+  var floatListenner = function() {
+    var next_top = $(window).scrollTop();
+    if (next_top >= offsetTop) {
+      elem.addClass("sticky");
+      if (next_top >= accueil_bottom - elem.height()) {
+        elem.addClass("sticky-start");
+      } else {
+        elem.removeClass("sticky-start");
+      }
+      if (next_top >= accueil_bottom) {
+        elem.addClass("sticky-complete");
+      } else {
+        elem.removeClass("sticky-complete");
+      }
+    } else { // Position relative
+      elem.removeClass("sticky");
+    }
+  };
+  if ($(window).scrollTop() >= offsetTop) {
+    elem.addClass("sticky");
+  }
+  $(window).scroll(floatListenner);
+}
+stick($('#navbar_main'));
       });
     </script>
   </body>

@@ -63,7 +63,6 @@ module.exports = function(grunt) {
             'bower_components/bootstrap/dist/js/bootstrap.js',
             'bower_components/jQuery-One-Page-Nav/jquery.scrollTo.js',
             'bower_components/jQuery-One-Page-Nav/jquery.nav.js',
-            'bower_components/sticky-kit/jquery.sticky-kit.js',
             'bower_components/flexslider/jquery.flexslider.js'
           ]
         }
