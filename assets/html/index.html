@@ -263,7 +263,7 @@ autres.</p>
 function stick(elem) {
   var offsetTop = elem.offset().top;
   var accueil_bottom = $('#espace').offset().top;
-  var floatListenner = function() {
+  var floatListener = function() {
     var next_top = $(window).scrollTop();
     if (next_top >= offsetTop) {
       elem.addClass("sticky");
@@ -281,10 +281,8 @@ function stick(elem) {
       elem.removeClass("sticky");
     }
   };
-  if ($(window).scrollTop() >= offsetTop) {
-    elem.addClass("sticky");
-  }
-  $(window).scroll(floatListenner);
+  floatListener();
+  $(window).scroll(floatListener);
 }
 stick($('#navbar_main'));
       });

@@ -120,10 +120,22 @@ body > .container-fluid {
   background-image: none;
   border: 0; 
   .box-shadow(none);
-  a {
-    font-size: 1.4em;
-    line-height: 30px;
-    color: @color_main_3;
+  li {
+    a {
+      border: 0px solid transparent;
+      font-size: 1.4em;
+      line-height: 28px;
+      color: @color_main_3;
+      &:hover {
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 70%);
+      }
+      &:focus {
+        outline: 0;
+      }
+    }
+    &.active a {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.33) 30%,rgba(0,0,0,0) 100%);
+    }
   }
   &.sticky {
     position: fixed;
