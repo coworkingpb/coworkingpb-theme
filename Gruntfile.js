@@ -34,13 +34,13 @@ module.exports = function(grunt) {
           }
         ]
       },
-      flexslider_fonts: {
+      galleria_theme: {
         files: [
           {
             expand: true,
-            cwd: 'bower_components/flexslider/fonts/',
+            cwd: 'bower_components/galleria/src/themes/classic/',
             src: '**',
-            dest: 'public/css/fonts'
+            dest: 'public/galleria'
           }
         ]
       }
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
             'bower_components/bootstrap/dist/js/bootstrap.js',
             'bower_components/jQuery-One-Page-Nav/jquery.scrollTo.js',
             'bower_components/jQuery-One-Page-Nav/jquery.nav.js',
-            'bower_components/flexslider/jquery.flexslider.js'
+            'bower_components/galleria/src/galleria.js'
           ]
         }
       }
