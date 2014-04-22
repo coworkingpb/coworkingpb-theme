@@ -314,6 +314,7 @@ function stick(elem) {
       elem.removeClass("sticky");
       elem.removeClass("sticky-complete");
       elem.removeClass("sticky-start");
+      $('#nav_main li.active').removeClass('active');
     }
   };
   floatListener();
