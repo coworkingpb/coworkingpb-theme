@@ -312,6 +312,8 @@ function stick(elem) {
       }
     } else { // Position relative
       elem.removeClass("sticky");
+      elem.removeClass("sticky-complete");
+      elem.removeClass("sticky-start");
     }
   };
   floatListener();
