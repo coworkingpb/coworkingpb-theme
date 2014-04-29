@@ -1,51 +1,12 @@
 /* Bootstrap. */
-@import "../../bower_components/bootstrap/less/alerts.less";
-@import "../../bower_components/bootstrap/less/badges.less";
 @import "../../bower_components/bootstrap/less/bootstrap.less";
-@import "../../bower_components/bootstrap/less/breadcrumbs.less";
-@import "../../bower_components/bootstrap/less/button-groups.less";
-@import "../../bower_components/bootstrap/less/buttons.less";
-@import "../../bower_components/bootstrap/less/carousel.less";
-@import "../../bower_components/bootstrap/less/close.less";
-@import "../../bower_components/bootstrap/less/code.less";
-@import "../../bower_components/bootstrap/less/component-animations.less";
-@import "../../bower_components/bootstrap/less/dropdowns.less";
-@import "../../bower_components/bootstrap/less/forms.less";
-@import "../../bower_components/bootstrap/less/glyphicons.less";
-@import "../../bower_components/bootstrap/less/grid.less";
-@import "../../bower_components/bootstrap/less/input-groups.less";
-@import "../../bower_components/bootstrap/less/jumbotron.less";
-@import "../../bower_components/bootstrap/less/labels.less";
-@import "../../bower_components/bootstrap/less/list-group.less";
-@import "../../bower_components/bootstrap/less/media.less";
-@import "../../bower_components/bootstrap/less/mixins.less";
-@import "../../bower_components/bootstrap/less/modals.less";
-@import "../../bower_components/bootstrap/less/navbar.less";
-@import "../../bower_components/bootstrap/less/navs.less";
-@import "../../bower_components/bootstrap/less/normalize.less";
-@import "../../bower_components/bootstrap/less/pager.less";
-@import "../../bower_components/bootstrap/less/pagination.less";
-@import "../../bower_components/bootstrap/less/panels.less";
-@import "../../bower_components/bootstrap/less/popovers.less";
-@import "../../bower_components/bootstrap/less/print.less";
-@import "../../bower_components/bootstrap/less/progress-bars.less";
-@import "../../bower_components/bootstrap/less/responsive-utilities.less";
-@import "../../bower_components/bootstrap/less/scaffolding.less";
-@import "../../bower_components/bootstrap/less/tables.less";
-@import "../../bower_components/bootstrap/less/theme.less";
-@import "../../bower_components/bootstrap/less/thumbnails.less";
-@import "../../bower_components/bootstrap/less/tooltip.less";
-@import "../../bower_components/bootstrap/less/type.less";
-@import "../../bower_components/bootstrap/less/utilities.less";
-@import "../../bower_components/bootstrap/less/variables.less";
-@import "../../bower_components/bootstrap/less/wells.less";
 
 /* Colors.
-
-Color variations from 0 (darkest, typically black) to 3 (lightest,
-typically white).
-
-*/
+ *
+ * Color variations from 0 (darkest, typically black) to 3 (lightest,
+ * typically white).
+ *
+ */
 @color_main_0: #000000;
 @color_main_1: #005b7d;
 @color_main_2: #00a6e3;
@@ -77,7 +38,7 @@ typically white).
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
   filter: grayscale(100%);
-   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
   filter: gray; /* IE6-9 */
 }
 
@@ -89,6 +50,7 @@ typically white).
   filter: none;
 }
 
+/* Macro blocks. */
 html {
   height: 100%;
 }
@@ -111,6 +73,7 @@ body > .container-fluid {
   z-index: 1;
 }
 
+/* Navigation, menus. */
 #navbar_main {
   position: absolute;
   z-index: 101;
@@ -135,6 +98,9 @@ body > .container-fluid {
       }
       &:focus {
         outline: 0;
+      }
+      &:hover {
+        background-color: transparent;
       }
       img {
         display: block;
@@ -183,6 +149,7 @@ body > .container-fluid {
   }
 }
 
+/* Sections. */
 section {
   .fullsize-background;
   padding-top: @navbar_main_height;
