@@ -86,7 +86,17 @@ autres.</p>
           <div class="row">
             <div class="">
               <h2>Les coworkers</h2>
-<div id="coworkers_list" class="row-fluid"></div>
+<div id="coworkers_list" class="row-fluid">
+  <div class="user">
+    <a href="#contact">
+      <img src="img/coworkers/plus.png" />
+      <div class="details">
+        <p class="name">et d'autres...</p>
+        <p class="job">Venez nous rencontrer !</p>
+      </div>
+    </a>
+  </div>
+</div>
             </div>
           </div>
         </div>
@@ -244,12 +254,14 @@ autres.</p>
       };
       coworkers = shuffle(coworkers);
       function add_coworker( first_name, last_name, avatar, job ) {
-        coworker_element = $('#coworkers_list').append(
-          '<div class="user col-md-3">' +
-          '  <img src="' + avatar + '" />' +
-          '  <div class="details">' +
-          '    <p class="name">' + first_name + ' ' + last_name + '</p>' +
-          '    <p class="job">' + job + '</p>' +
+        coworker_element = $('#coworkers_list').prepend(
+          '<div class="user">' +
+          '  <div>' +
+          '    <img src="' + avatar + '" />' +
+          '    <div class="details">' +
+          '      <p class="name">' + first_name + ' ' + last_name + '</p>' +
+          '      <p class="job">' + job + '</p>' +
+          '    </div>' +
           '  </div>' +
           '</div>'
         );
