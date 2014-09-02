@@ -348,3 +348,58 @@ section#contact {
     }
   }
 }
+
+#encart_portes_ouvertes {
+  display:block;
+  position: absolute;
+  z-index: 200;
+  top: 50px;
+  right: 150px;
+}
+
+#portes_ouvertes {
+  section {
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+
+  #navbar_main {
+    top: 0;
+  }
+  section#annonce {
+    padding-top: @navbar_main_height;
+    background-color: @color_main_1;
+    .header {
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+  }
+  .programme {
+    padding-bottom: 1em;
+    h2 {
+      font-size: 4em;
+    }
+  }
+  .partenaires {
+    img {
+      padding: 1em;
+    }
+  }
+  h1 {
+    color: @color_main_3;
+    font-size: 6em;
+    font-family: @font_title;
+    padding-top: 0;
+    margin: 0 auto;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  section#mentions {
+    background-color: @color_grey_2;
+    color: @color_main_1;
+    h2 {
+      color: @color_main_1;
+    }
+  }
+}
