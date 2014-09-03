@@ -391,7 +391,7 @@ section#contact {
     }
   }
   h1 {
-    color: @color_main_3;
+    color: @color_main_3; 
     font-size: 6em;
     font-family: @font_title;
     padding-top: 0;
@@ -405,6 +405,26 @@ section#contact {
     color: @color_main_1;
     h2 {
       color: @color_main_1;
+    }
+  }
+  @media (max-width: @screen-lg-min) {  /* medium */
+    h1 {
+      font-size: 5em;
+    }
+  }
+  @media (max-width: @screen-md-min) {  /* small */
+    h1 {
+      font-size: 3.8em;
+    }
+  }
+  @media (max-width: @screen-sm-min) {  /* x-small */
+    h1 {
+      font-size: 3em;
+    }
+  }
+  @media (min-width: @screen-lg-min) {  /* large */
+    h1 {
+      
     }
   }
 }
