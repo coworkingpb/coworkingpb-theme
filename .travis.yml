@@ -1,4 +1,3 @@
-language: python
 branches:
   only:
     - master
@@ -7,5 +6,7 @@ env:
     secure: "ewKap9vVcelLvT0TOYkaQ+E5EivQAbNauNBKIcalpnlwufmmB45eRR+lqcHkMVs0hTfRGCxYj2aUoGjynX6l7ot1LTsbtrqPRgUhCe64SgH+d6mHaBylayh5CqQHF99QvvFI0Ke38da9UPIdka3+pBR0YaMp3lPUYUjTCadyJUU="
 install:
   - pip install ghp-import
+language: python
 script:
-        - make develop public gh-pages-commit gh-pages-push
+  - make develop public gh-pages-commit gh-pages-push
+sudo: false

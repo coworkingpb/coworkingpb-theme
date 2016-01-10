@@ -1,23 +1,15 @@
 {
   "name": "coworkingpb",
   "version": "0.0.0",
-  "main": "public/css/coworkingpb.css",
+  "main": "public/css/main.css",
   "ignore": [
     "**/*.txt"
   ],
   "dependencies": {
-    "jquery": "2.1.0",
-    "jQuery-One-Page-Nav": "2.2.0",
-    "bootstrap": "3.1.1",
-    "galleria": "1.2.9"
+    "bootstrap": "~4",
+    "fontawesome": "~4",
+    "jQuery": "~2",
+    "tether": "~1"
   },
-  "devDependencies": {
-    "jquery": "2.1.0",
-    "jQuery-One-Page-Nav": "2.2.0",
-    "bootstrap": "3.1.1",
-    "galleria": "1.2.9"
-  },
-  "resolutions": {
-    "jquery": "2.1.0"
-  }
+  "devDependencies": {}
 }

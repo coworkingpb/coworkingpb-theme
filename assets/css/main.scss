@@ -1,0 +1,155 @@
+/* Libraries. */
+@import "theme";
+@import "../../bower_components/fontawesome/scss/font-awesome";
+@import "../../bower_components/bootstrap/scss/bootstrap-flex";
+
+
+/* Utilities. */
+@mixin animated-transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin show-size {
+  @include media-breakpoint-up(xs) { background-color: purple; }
+  @include media-breakpoint-up(sm) { background-color: cyan; }
+  @include media-breakpoint-up(md) { background-color: yellow; }
+  @include media-breakpoint-up(lg) { background-color: orange; }
+  @include media-breakpoint-up(xl) { background-color: red; }
+}
+
+@mixin grayscale($level) {
+  -webkit-filter: grayscale($level);
+  -moz-filter: grayscale($level);
+  -ms-filter: grayscale($level);
+  -o-filter: grayscale($level);
+  filter: grayscale($level);
+  //filter: gray; /* IE 6-9 */
+}
+
+
+/* Macro blocks. */
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  padding-top: $header_height;
+  padding-bottom: 100px;  // Footer height + spacer.
+  @include media-breakpoint-down(sm) { padding-top: 0px; }
+  background-color: $color_grey_3;
+  font-family: $font_standard;
+}
+
+section {
+  padding-top: $header_height;
+}
+
+header {
+  nav {
+    @extend .navbar;
+    @extend .navbar-light;
+    @extend .navbar-fixed-top;
+    padding: 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: $color_grey_2;
+    background-color: rgba(#fff, 1);
+    //@include show-size;
+    > div {
+      @include make-container();
+      @include make-container-max-widths();
+      #logo {
+        @extend .navbar-brand;
+	height: $header_height;
+	line-height: $header_height;
+      }
+      ul {
+        @extend .nav;
+        @extend .navbar-nav;
+        li {
+          @extend .nav-item;
+	  margin: 0 0 0 0 !important;
+	  padding: 0;
+          height: $header_height;
+          line-height: $header_height;
+          a {
+            @extend .nav-link;
+            line-height: $header_height - 4px;
+	    margin: 0;
+            padding: 0 20px;
+	    border-width: 0 0 4px 0;
+	    border-style: solid;
+	    border-color: transparent;
+	    &:hover {
+              border-color: $color_grey_2;
+	    }
+	    &.active {
+              border-color: $color_main_2;
+              color: $color_main_1;    
+	    }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  nav {
+    @extend .navbar;
+    @extend .navbar-dark;
+    padding: 0;
+    border-width: 0px 0 0px 0;
+    border-style: solid;
+    border-color: transparent;
+    background-color: $color_main_2;
+    color: $color_main_3;
+    > div {
+      @include make-container();
+      @include make-container-max-widths();
+      #copyright {
+        @extend .navbar-brand;
+	padding: 0;
+	margin: 0;
+	height: $footer_height;
+	line-height: $footer_height;
+      }
+      ul {
+        @extend .nav;
+        @extend .navbar-nav;
+	float: right;
+        li {
+          @extend .nav-item;
+	  margin: 0 0 0 0 !important;
+	  padding: 0;
+          height: $footer_height;
+          line-height: $footer_height;
+          a {
+            @extend .nav-link;
+            line-height: $footer_height;
+	    margin: 0;
+            padding: 0 10px;
+	    &:hover {}
+	    &.active {
+              color: $color_main_1;
+	    }
+          }
+        }
+      }
+    }
+  }
+}

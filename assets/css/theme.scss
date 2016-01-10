@@ -1,0 +1,25 @@
+/* Features. */
+$enable-transitions: true;
+
+/* Fonts. */
+$font_standard: 'Raleway', sans-serif;
+$font_title: 'Nixie One', cursive;
+
+/* Colors.
+ *
+ * Color variations from 0 (darkest, typically black) to 3 (lightest,
+ * typically white).
+ *
+ */
+$color_main_0: #000000;
+$color_main_1: #005b7d;
+$color_main_2: #00a6e3;
+$color_main_3: #ffffff;
+$color_grey_0: #606060;
+$color_grey_1: #909090;
+$color_grey_2: #dbdbdb;
+$color_grey_3: #f0f0f0;
+
+// Navbars
+$header_height: 60px;
+$footer_height: 60px;

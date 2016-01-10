@@ -1,17 +1,31 @@
 # Reference card for usual actions in development environment.
 #
+# For standard installation, see INSTALL.
+# For details about development environment, see CONTRIBUTING.rst.
+#
 
-NPM = npm
-BIN_DIR = node_modules/.bin
-BOWER = $(BIN_DIR)/bower
-GRUNT = $(BIN_DIR)/grunt
-GHP = ghp-import
+# Directories.
+BASEDIR = $(CURDIR)
+BINDIR ?= $(CURDIR)/bin
+INPUTDIR = $(BASEDIR)/content
+OUTPUTDIR = $(BASEDIR)/public
+CONFFILE = $(BASEDIR)/pelicanconf.py
+PUBLISHCONF = $(BASEDIR)/publishconf.py
 
-
-.PHONY: help develop bower watch public clean dist-clean maintainer-clean gh-pages-commit gh-pages-push
+# Executables.
+BOWER ?= $(shell npm bin)/bower
+BUNDLE_INSTALL ?= bundle install --path=$(BASEDIR)/lib
+GHP ?= ghp-import
+GORUN ?= gorun.py
+GRUNT ?= $(shell npm bin)/grunt
+NPM ?= npm
+PIP ?= pip
+SASS ?= $(BINDIR)/sass
+UGLIFYJS ?= $(shell npm bin)/uglifyjs
 
 
 #: help - Display available targets.
+.PHONY: help
 help:
 	@echo "Reference card for usual actions in development environment."
 	@echo "Here are available targets:"
@@ -19,51 +33,105 @@ help:
 
 
 #: develop - Install development libraries.
+.PHONY: develop
 develop:
+	$(BUNDLE_INSTALL)
 	$(NPM) install
-	pip install ghp-import
+	$(BOWER) install
+	$(PIP) install -r requirements.pip
 
 
 #: bower - Download libraries with bower.
+.PHONY: bower
 bower:
 	$(BOWER) install
 
 
 #: watch - Watch in-development files and automatically build them on update.
-watch:
-	$(GRUNT) watch
+.PHONY: watch
+watch: develop
+	$(GORUN)
+
+
+#: html - Generate HTML files in public/ folder.
+.PHONY: html
+html:
+	rsync --progress assets/html/* public/
+
+
+#: css - Generate CSS files in public/ folder.
+.PHONY: css
+css:
+	mkdir -p public/css
+	$(SASS) assets/css/main.scss public/css/main.css
+
+
+#: jslibs - Generate JS libraries in public/ folder.
+.PHONY: js
+js:
+	mkdir -p public/js
+	$(UGLIFYJS) \
+		bower_components/jquery/dist/jquery.js \
+		bower_components/tether/dist/js/tether.js \
+		bower_components/bootstrap/dist/js/bootstrap.js \
+		--output=public/js/libs.min.js
+	$(UGLIFYJS) \
+		assets/js/main.js \
+		--output=public/js/main.js
+
+
+#: img - Generate public/img/
+.PHONY: img
+img:
+	mkdir -p public/img
+	rsync -r --progress assets/img/ public/img/
+
+
+#: fonts - Generate public/fonts/
+.PHONY: fonts
+fonts:
+	mkdir -p assets/fonts public/fonts
+	rsync --progress bower_components/fontawesome/fonts/* public/fonts/
+	rsync -r --progress assets/fonts/ public/fonts/
 
 
 #: public - Generate public/ folder contents.
-public: bower
-	$(GRUNT) copy less uglify
+.PHONY: public
+public: develop css fonts html img js
 
 
 #: serve - Serve public/ folder on localhost:8000
+.PHONY: serve
 serve:
 	cd public/ && python -m SimpleHTTPServer
 
 
 #: clean - Basic cleanup, mostly temporary files.
+.PHONY: clean
 clean:
 
 
 #: distclean - Remove local builds
+.PHONY: dist-clean
 dist-clean: clean
 	rm -rf public/
 	rm -rf bower_components/
 
 
 #: maintainer-clean - Remove almost everything that can be re-generated.
+.PHONY: maintainer-clean
 maintainer-clean: dist-clean
 	rm -rf node_modules/
 
 
 #: gh-pages-commit - Commit generated website into gh-pages branch.
+.PHONY: gh-pages-commit
 gh-pages-commit:
+	cp CNAME public/
 	$(GHP) -n public/
 
 
 # gh-pages-push - Travis pushes gh-pages branch on Github.
+.PHONY: gh-pages-push
 gh-pages-push:
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
